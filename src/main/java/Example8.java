@@ -1,18 +1,15 @@
-public class Example7 {
-    public static void main(String[] args) {
+public class Example8 {
+    public static int m() {
         try {
             System.out.println("0");
-            throw new NullPointerException("ошибка");
-        } catch (NullPointerException e) {
+            throw new RuntimeException();
+        } finally {
             System.out.println("1");
-            try {
-                throw new ArithmeticException();
-            } catch (ArithmeticException e2) {
-                System.out.println("Добавлен собственный catch. Теперь ошибка перехвачена корректно и программа не крашнется");
-            }
-        } catch (ArithmeticException e) {
-            System.out.println("2");
         }
-        System.out.println("3");
+    }
+
+    public static void main(String[] args) {
+        System.out.println(m());
     }
 }
+

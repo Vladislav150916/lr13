@@ -1,11 +1,12 @@
-public class Example1 {
+public class Example2 {
     public static void main(String[] args) {
         try {
             System.out.println("0");
-            throw  new RuntimeException("Непроверяемая ошибка");
-        } catch (RuntimeException e) {
-            System.out.println("1  "+ e);
+            throw new RuntimeException("Непроверяемая ошибка");
+            //System.out.println("1"); иначе компилятор выдаст ошибку
+        } catch (Exception e) {
+            System.out.println("2 " + e);
         }
-        System.out.println("2");
+        System.out.println("3");
     }
 }

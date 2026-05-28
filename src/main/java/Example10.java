@@ -1,14 +1,12 @@
-public class Example9 {
+public class Example10 {
     public static int m() {
         try {
             System.out.println("0");
-            throw new Exception("Добавлена генерация исключения");
-        } catch (Exception e) {
-            System.out.println("Добавлена обработка исключения");
+            return 15;
         } finally {
             System.out.println("1");
+            return 20;
         }
-        return 99; //добавлен выход из метода
     }
 
     public static void main(String[] args) {

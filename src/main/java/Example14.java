@@ -1,15 +1,15 @@
-public class Example13 {
+public class Example14 {
+    public static void m(int x) throws ArithmeticException {
+        int h = 10 / x;
+    }
+
     public static void main(String[] args) {
         try {
             int l = args.length;
             System.out.println("размер массива= " + l);
-
-            int h = 10 / l;
-            args[l + 1] = "10";
+            m(l);
         } catch (ArithmeticException e) {
-            System.out.println("Деление на ноль");
-        } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Индекс не существует");
+            System.out.println("Ошибка: Деление на ноль");
         }
     }
 }

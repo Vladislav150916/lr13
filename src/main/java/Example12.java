@@ -1,14 +1,15 @@
-public class Example11 {
-    public static void main(String[] args) {
-        try {
-            System.out.println("0");
-            throw new NullPointerException("ошибка");
-        } catch (NullPointerException e) {
-            System.out.println("1");
-        } finally {
-            System.out.println("2");
+public class Example12 {
+    public static void m(String str, double chislo) {
+        if (str == null) {
+            throw new IllegalArgumentException("Строка введена неверно");
         }
-        System.out.println("3");
+        if (chislo > 0.001) {
+            throw new IllegalArgumentException("Неверное число");
+        }
+    }
+
+    public static void main(String[] args) {
+        m(null, 0.000001);
     }
 }
 

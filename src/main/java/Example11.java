@@ -1,16 +1,14 @@
-public class Example10 {
-    public static int m() {
+public class Example11 {
+    public static void main(String[] args) {
         try {
             System.out.println("0");
-            return 15;
-        } finally {
+            throw new NullPointerException("ошибка");
+        } catch (NullPointerException e) {
             System.out.println("1");
-            //return 20;    Использование return в finally нежелательна
+        } finally {
+            System.out.println("2");
         }
-    }
-
-    public static void main(String[] args) {
-        System.out.println(m());
+        System.out.println("3");
     }
 }
 

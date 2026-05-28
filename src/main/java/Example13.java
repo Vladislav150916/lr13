@@ -1,15 +1,16 @@
-public class Example12 {
-    public static void m(String str, double chislo) {
-        if (str == null) {
-            throw new IllegalArgumentException("Строка введена неверно");
-        }
-        if (chislo > 0.001) {
-            throw new IllegalArgumentException("Неверное число");
-        }
-    }
-
+public class Example13 {
     public static void main(String[] args) {
-        m("Не пустое значение", 0.000001); //str теперь не равна null и программа не крашится
+        try {
+            int l = args.length;
+            System.out.println("размер массива= " + l);
+
+            int h = 10 / l;
+            args[l + 1] = "10";
+        } catch (ArithmeticException e) {
+            System.out.println("Деление на ноль");
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Индекс не существует");
+        }
     }
 }
 
