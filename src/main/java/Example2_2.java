@@ -1,5 +1,3 @@
-import java.util.Arrays;
-import java.util.InputMismatchException;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -7,34 +5,11 @@ public class Example2_2 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
 
-        boolean isSizeCorrect = false;
-        int a = 0;
-        int b = 0;
-        while (!isSizeCorrect) {
-            try {
-                System.out.println("Введите количество строк в матрице:");
-                a = in.nextInt();
-                System.out.println("Введите количество столбцов в матрице:");
-                b = in.nextInt();
-                if (a <= 0 || b <= 0) {
-                    throw new RuntimeException();
-                }
-                isSizeCorrect = true;
-            } catch (InputMismatchException e) {
-                System.out.println("Ошибка. Введена строка, либо тип данных не соответствует int");
-            } catch (RuntimeException re) {
-                System.out.println("Ошибка. Отрицательное, либо нулевое количество строк или столбцов");
-            } finally {
-                if (isSizeCorrect) {
-                    System.out.println("Введенные значения корректны");
-                } else {
-                    System.out.println("Повторите ввод корректно");
-                    if (in.hasNext()) {
-                        in.nextLine();
-                    }
-                }
-            }
-        }
+        System.out.println("Введите количество строк в матрице:");
+        int a = in.nextInt();
+        System.out.println("Введите количество столбцов в матрице:");
+        int b = in.nextInt();
+
         int[][] matrix = new int[a][b];
 
         System.out.println("Матрица заполняется случайными числами. Получена матрица:");
@@ -47,33 +22,10 @@ public class Example2_2 {
             System.out.println();
         }
 
-
         System.out.println("Введите индекс столбца матрицы, который хотите получить");
-        int c = -1;
-        boolean isNumCorrect = false;
-        while (!isNumCorrect) {
-            try {
-                c = in.nextInt();
-                if (c < 0 || c >= b) {
-                    throw new ArrayIndexOutOfBoundsException();
-                }
-                isNumCorrect = true;
-            } catch (InputMismatchException e) {
-                System.out.println("Ошибка. Введена строка, либо тип данных не соответствует int");
-            } catch (ArrayIndexOutOfBoundsException ae) {
-                System.out.println("Ошибка. Введен отрицательный индекс, либо индекс выходящий за размер массива");
-            } finally {
-                if (isNumCorrect) {
-                    System.out.println("Введено корректное значение");
-                } else {
-                    System.out.println("Повторите ввод корректно");
-                    if (in.hasNext()) {
-                        in.nextLine();
-                    }
-                }
-            }
-        }
-        System.out.println("Столбец с иднексом " + c + ":");
+        int c = in.nextInt();
+
+        System.out.println("Столбец с индексом " + c + ":");
         for (int i = 0; i < a; i++) {
             System.out.println(matrix[i][c]);
         }
