@@ -12,13 +12,13 @@ public class Example2_3_obrabotka {
             try {
                 length = in.nextInt();
                 if (length <= 0) {
-                    throw new RuntimeException();
+                    throw new NegativeArraySizeException();
                 } else {
                     isLengthCorrect = true;
                 }
             } catch (InputMismatchException e) {
                 System.out.println("Ошибка. Введена строка, либо тип данных не соответствует int");
-            } catch (RuntimeException re) {
+            } catch (NegativeArraySizeException re) {
                 System.out.println("Ошибка. Отрицательная, либо нулевая длина массива");
             } finally {
                 if (isLengthCorrect) {

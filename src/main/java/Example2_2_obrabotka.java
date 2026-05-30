@@ -16,12 +16,12 @@ public class Example2_2_obrabotka {
                 System.out.println("Введите количество столбцов в матрице:");
                 b = in.nextInt();
                 if (a <= 0 || b <= 0) {
-                    throw new RuntimeException();
+                    throw new NegativeArraySizeException();
                 }
                 isSizeCorrect = true;
             } catch (InputMismatchException e) {
                 System.out.println("Ошибка. Введена строка, либо тип данных не соответствует int");
-            } catch (RuntimeException re) {
+            } catch (NegativeArraySizeException re) {
                 System.out.println("Ошибка. Отрицательное, либо нулевое количество строк или столбцов");
             } finally {
                 if (isSizeCorrect) {
