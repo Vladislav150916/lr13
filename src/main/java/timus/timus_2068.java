@@ -10,6 +10,7 @@ public class timus_2068 {
                 countMod3++;
             }
         }
+
         if (countMod3 % 2 == 1) {
             System.out.println("Daenerys");
         } else {
