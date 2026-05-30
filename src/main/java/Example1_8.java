@@ -1,11 +1,10 @@
-public class Example10 {
+public class Example1_8 {
     public static int m() {
         try {
             System.out.println("0");
-            return 15;
+            throw new RuntimeException();
         } finally {
             System.out.println("1");
-            return 20;
         }
     }
 

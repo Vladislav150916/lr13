@@ -1,4 +1,4 @@
-public class Example12 {
+public class Example1_12 {
     public static void m(String str, double chislo) {
         if (str == null) {
             throw new IllegalArgumentException("Строка введена неверно");

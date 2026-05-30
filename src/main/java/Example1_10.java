@@ -1,10 +1,11 @@
-public class Example9 {
+public class Example1_10 {
     public static int m() {
         try {
             System.out.println("0");
-            return 55;    // выход из метода
+            return 15;
         } finally {
             System.out.println("1");
+            return 20;
         }
     }
 
