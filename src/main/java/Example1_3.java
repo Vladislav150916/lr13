@@ -1,4 +1,4 @@
-public class Example3 {
+public class Example1_3 {
     public static void main(String[] args) {
         try {
             System.out.println("0");

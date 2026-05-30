@@ -1,8 +1,8 @@
-public class Example8 {
+public class Example1_9 {
     public static int m() {
         try {
             System.out.println("0");
-            throw new RuntimeException();
+            return 55;    // выход из метода
         } finally {
             System.out.println("1");
         }
